@@ -28,7 +28,6 @@ BEGIN{
   quickstart=""; deps="";
 }
 
-# start of repo item
 /^[[:space:]]*-[[:space:]]name:[[:space:]]*/{
   flush()
   inItem=1; mode=""
@@ -52,7 +51,6 @@ inItem==1 && /^[[:space:]]*purpose:[[:space:]]*/{
 inItem==1 && /^[[:space:]]*quickstart:[[:space:]]*$/ { mode="quick"; next }
 inItem==1 && /^[[:space:]]*depends_on:[[:space:]]*$/ { mode="deps"; next }
 
-# list item (quoted or not), only when in quick/deps mode
 inItem==1 && (mode=="quick" || mode=="deps") && /^[[:space:]]*-[[:space:]]*/{
   line=$0
   sub(/^[[:space:]]*-[[:space:]]*/,"",line)
