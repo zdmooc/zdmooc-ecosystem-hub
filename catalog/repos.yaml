@@ -1,0 +1,92 @@
+# Source de vérité : inventaire des repos "adjacents" à rh-openshift-architect-lab
+# Convention:
+# - category: masterclass | labs | blueprint | reference-apps | runbooks | standards
+# - status: planned | skeleton | active | mature
+repos:
+  - name: rh-openshift-architect-lab
+    category: labs
+    status: active
+    purpose: "Hub principal de labs OpenShift (certifs EX280/EX288/...) + exercices."
+    quickstart:
+      - "Voir README du repo"
+    depends_on:
+      - argocd-complete-masterclass
+      - openshift-reference-apps
+
+  - name: argocd-complete-masterclass
+    category: masterclass
+    status: active
+    purpose: "GitOps Argo CD (App-of-Apps, ApplicationSet, RBAC, multi-env/cluster)."
+    quickstart:
+      - "make install"
+      - "make bootstrap"
+
+  - name: docker-podman-complete-masterclass
+    category: masterclass
+    status: active
+    purpose: "Docker & Podman (build/run, volumes, networks, compose, rootless, security)."
+    quickstart:
+      - "export ENGINE=docker # ou podman"
+      - "make lab01"
+
+  - name: kafka-complete-masterclass
+    category: masterclass
+    status: active
+    purpose: "Kafka en pratique (local Redpanda + UI, concepts, ops, Strimzi)."
+    quickstart:
+      - "make lab01"
+      - "make lab02"
+      - "make lab03"
+
+  # Blueprints (à créer/compléter)
+  - name: openshift-platform-bootstrap
+    category: blueprint
+    status: planned
+    purpose: "Bootstrap cluster (CRC/Kind/OCP), prérequis, conventions, scripts."
+
+  - name: openshift-gitops-standard-6files
+    category: standards
+    status: planned
+    purpose: "Standard GitOps '6 fichiers' (sandbox/build/preprod/prod + users admin/edit)."
+
+  - name: openshift-observability-blueprints
+    category: blueprint
+    status: planned
+    purpose: "Prometheus/Grafana/Loki, ServiceMonitors, dashboards, alerting."
+
+  - name: openshift-security-policy-pack
+    category: blueprint
+    status: planned
+    purpose: "Kyverno/Gatekeeper, PSA/PSS, LimitRange/ResourceQuota, règles org."
+
+  - name: openshift-networking-blueprints
+    category: blueprint
+    status: planned
+    purpose: "Routes/Ingress, NetworkPolicies, patterns multi-tenant, egress."
+
+  - name: openshift-cicd-blueprints
+    category: blueprint
+    status: planned
+    purpose: "Tekton/Jenkins, Nexus, conventions build/publish, supply-chain."
+
+  # Apps de référence
+  - name: openshift-reference-apps
+    category: reference-apps
+    status: planned
+    purpose: "Apps démo prêtes GitOps (Kustomize/Helm), multi-env, probes, HPA/PDB."
+
+  - name: openshift-event-driven-lab
+    category: reference-apps
+    status: planned
+    purpose: "Event-driven complet (Kafka + consumers/producers + observabilité)."
+
+  - name: openshift-sso-keycloak-patterns
+    category: blueprint
+    status: planned
+    purpose: "SSO Keycloak (OIDC), mapping groupes/rôles, exemples d’intégration."
+
+  # Runbooks
+  - name: openshift-sre-runbooks
+    category: runbooks
+    status: planned
+    purpose: "Runbooks incidents (networking, storage, operators, gitops, certs, quotas)."
