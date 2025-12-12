@@ -11,5 +11,5 @@ check:
 	./scripts/check-repos.sh
 
 render:
-	python scripts/render-catalog.py > docs/20-repo-catalog.md
-	@echo "Generated docs/20-repo-catalog.md"
+	./scripts/render-catalog.sh > docs/20-repo-catalog.md
+	 "Generated docs/20-repo-catalog.md"
